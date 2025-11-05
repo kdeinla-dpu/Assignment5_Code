@@ -19,10 +19,10 @@ jobs:
           architecture: x64
 
       - name: Install Linter
-        uses: mvn clean install -DskipTests
+        run: mvn clean install -DskipTests
 
       - name: Run Checkstyle
-        uses: mvn checkstyle:checkstyle -Dcheckstyle.output.file=target/checkstyle-results.xml
+        run: mvn checkstyle:checkstyle -Dcheckstyle.output.file=target/checkstyle-results.xml
 
       - name: Upload Checkstyle Result
         uses: actions/upload-artifact@v4
